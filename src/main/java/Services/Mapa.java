@@ -4,19 +4,20 @@ import Models.Caverna;
 import Models.Direcao;
 
 public class Mapa {
-    public Caverna criarCaverna () {
-        Caverna novoNo = new Caverna();
-        return novoNo;
+    private Caverna raiz;
+
+    public void setRaiz(Caverna raiz, Caverna cavernaSul) {
+        this.raiz = raiz;
+        this.raiz.mapear(Direcao.SUL,cavernaSul );
+        this.raiz.mapear(Direcao.NORTE, null);
+        this.raiz.mapear(Direcao.LESTE, null);
+        this.raiz.mapear(Direcao.OESTE, null);
+    }
+    public void criarPrimeiraSubArvore(Caverna caverna, Caverna cavernaSul, Caverna cavernaLeste, Caverna cavernaOeste){
+        caverna.mapear(Direcao.NORTE,raiz);
+        caverna.mapear(Direcao.SUL, cavernaSul);
+        caverna.mapear(Direcao.LESTE, cavernaLeste);
+        caverna.mapear(Direcao.OESTE, cavernaOeste);
     }
 
-    public void criarSubArvore(Caverna atual, Caverna oeste, Caverna leste, Caverna norte, Caverna sul) {
-        atual.mapear(Direcao.OESTE, oeste);
-        atual.mapear(Direcao.LESTE, leste);
-        atual.mapear(Direcao.NORTE, norte);
-        atual.mapear(Direcao.SUL, sul);
-    }
-
-    public void criarRaiz(Caverna atual, Caverna oeste, Caverna leste, Caverna norte, Caverna sul) {
-        criarSubArvore(atual, oeste, leste, norte, sul);
-    }
 }

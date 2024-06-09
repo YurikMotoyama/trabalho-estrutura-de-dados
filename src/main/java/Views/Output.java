@@ -126,4 +126,8 @@ public class Output {
     public void printGameOver(){
         System.out.println(GAME_OVER);
     }
+
+    public void AskPlayerName(){
+        System.out.println("Qual seu nome?");
+    }
 }
