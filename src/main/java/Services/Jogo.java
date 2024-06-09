@@ -30,7 +30,7 @@ public class Jogo {
         }
 
         mapa.setRaiz(cavernas[0], cavernas[1]);
-        mapa.criarPrimeiraSubArvore(cavernas[1],cavernas[2],cavernas[3],cavernas[4] );
+        mapa.criarPrimeiraSubArvore(cavernas[1],cavernas[3],cavernas[2],cavernas[4] );
 
         cavernas[2].mapear(Direcao.NORTE, cavernas[1]);
         cavernas[2].mapear(Direcao.LESTE, cavernas[5]);
